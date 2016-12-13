@@ -5,27 +5,27 @@ const pipeUrl =
 const powUrl =
   'http://www.clipartkid.com/images/364/mini-comic-sound-effect-decals-boom-zam-ka-pow-LEYAGq-clipart.jpg'
 
-const backgroundUrl = 
+const backgroundUrl =
   'https://cdn.rawgit.com/bhauman/flappy-bird-demo/master/resources/public/imgs/background.png'
 
 const gameOverUrl =
   'http://www.ruwhim.com/wp-content/uploads/2014/02/flappybird_fulmer.jpg'
 
-var pipe1 = new Image({
+const pipe1 = new Image({
   url: pipeUrl ,
-  width: 70, 
-  height: 150, 
+  width: 70,
+  height: 150,
   x:738,
   y:-100
-  })
+})
 
-var pipe2 = new Image({
+const pipe2 = new Image({
   url: pipeUrl ,
-  width: 70, 
-  height: 150, 
+  width: 70,
+  height: 150,
   x:738,
   y:380
-}) 
+})
 
 const bird = new Image({
   url: "http://i.imgur.com/VnRkpf1.png",
@@ -33,8 +33,7 @@ const bird = new Image({
   height: 40,
 })
 
-const jump = 
-  () => bird.y += 85;
+const jump = () => bird.y += 85;
 
 const reset = () => {
   setBackdropURL(backgroundUrl)
@@ -44,24 +43,22 @@ const reset = () => {
 ready(() => {
   reset()
 
-  ready(() => {
   forever(() => {
-  pipe1.x += -7
-  pipe2.x += -7
+    pipe1.x += -7
+    pipe2.x += -7
   })
-})  
- 
+
   forever(() => {
     if (bird.y <= minY) {
-      return setBackdropURL(gameOverUrl)
-       return  (pipe1.x = maxX)
-       return (pipe2.x = maxX)
+      setBackdropURL(gameOverUrl)
+      pipe1.x = maxX
+      return (pipe2.x = maxX)
     } else if (bird.y >= maxY) {
       setBackdropURL(powUrl)
     } else {
       setBackdropURL(backgroundUrl)
     }
-    
+
     return bird.y += -12
   })
 })
@@ -70,10 +67,10 @@ onKeyDown(key => {
   switch (key) {
     case 'ESCAPE':
       return reset();
-      
+
     case 'SPACE':
       return jump();
-      
+
     default:
       return
   }
