@@ -37,7 +37,9 @@ const jump = () => bird.y += 85;
 
 const reset = () => {
   setBackdropURL(backgroundUrl)
-  return (bird.y = 50)
+   bird.y = 50
+   pipe1.x = maxX
+   return pipe2.x = maxX
 }
 
 ready(() => {
