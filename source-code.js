@@ -44,11 +44,10 @@ const reset = () => {
 
 ready(() => {
   reset()
-
-  forever(() => {
+   forever(() => {
     pipe1.x += -7
     pipe2.x += -7
-  })
+    })
 
   forever(() => {
     if (bird.y <= minY) {
