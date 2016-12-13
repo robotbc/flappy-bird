@@ -60,7 +60,7 @@ ready(() => {
       setBackdropURL(backgroundUrl)
     }
 
-    return bird.y += -12
+    return bird.y += -5
   })
 })
 
