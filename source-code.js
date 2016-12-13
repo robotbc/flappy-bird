@@ -52,7 +52,7 @@ ready(() => {
     if (bird.y <= minY) {
       setBackdropURL(gameOverUrl)
       pipe1.x = maxX
-      return (pipe2.x = maxX)
+      return pipe2.x = maxX;
     } else if (bird.y >= maxY) {
       setBackdropURL(powUrl)
     } else {
